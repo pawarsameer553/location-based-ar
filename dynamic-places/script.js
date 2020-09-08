@@ -47,7 +47,7 @@ window.onload = () => {
 
                     let model = document.createElement('a-entity');
                     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    model.setAttribute('scale', '0.5 0.5 0.5');
+                    model.setAttribute('scale', '15 15 15');
                     model.setAttribute('rotation', '0 180 0');
                     model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
 
