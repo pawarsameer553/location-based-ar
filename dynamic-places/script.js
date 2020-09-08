@@ -1,7 +1,7 @@
 // getting places from APIs
 function loadPlaces(position) {
     const params = {
-        radius: 200,    // search places not farther than this value (in meters)
+        radius: 100,    // search places not farther than this value (in meters)
         clientId: 'MVPFPYYOYDC5GGJKWAFFVBKI2XD00HGWVBBWRTCPJWQBKJ52',
         clientSecret: 'JHX4MNB1DRL5YSLKYCTEUHWFNTWL4Y31OXRZWLBQPZA4JNSU',
         version: '20300101',    // foursquare versioning, required but unuseful for this demo
@@ -47,7 +47,7 @@ window.onload = () => {
 
                     let model = document.createElement('a-entity');
                     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    model.setAttribute('scale', '15 15 15');
+                    model.setAttribute('scale', '100 100 100');
                     model.setAttribute('rotation', '0 180 0');
                     model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
 
