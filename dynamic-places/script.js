@@ -8,7 +8,7 @@ function loadPlaces(position) {
     };
 
     // CORS Proxy to avoid CORS problems
-    const corsProxy = 'https://pawarsameer553.github.io/';
+    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
     // Foursquare API (limit param: number of maximum places to fetch)
     const endpoint = `${corsProxy}https://api.foursquare.com/v2/venues/search?intent=checkin
