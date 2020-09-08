@@ -2,8 +2,23 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
-    render();
+
+    let places = staticLoadPlaces();
+    renderPlaces(places);
 };
+
+function staticLoadPlaces() {
+    return [
+        {
+            name: 'Pokèmon',
+            location: {
+                // decomment the following and add coordinates:
+                // lat: <your-latitude>,
+                // lng: <your-longitude>,
+            },
+        },
+    ];
+}
 
 var models = [
     {
@@ -46,14 +61,12 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-function render() {
+function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-// first get current user location
-    return navigator.geolocation.getCurrentPosition(function (position) {
-
-        let latitude = position.coords.latitude;
-        let longitude = position.coords.latitude;
+    places.forEach((place) => {
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
@@ -70,12 +83,5 @@ function render() {
         });
 
         scene.appendChild(model);
-    },
-        (err) => console.error('Error in retrieving position', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 27000,
-        }
-    );
+    });
 }
