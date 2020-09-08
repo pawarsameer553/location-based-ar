@@ -20,6 +20,7 @@ function loadPlaces(position) {
         &v=${params.version}`;
     return fetch(endpoint)
         .then((res) => {
+            console.log(res);
             return res.json()
                 .then((resp) => {
                     return resp.response.venues;
