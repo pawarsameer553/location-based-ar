@@ -45,24 +45,17 @@ window.onload = () => {
                     const latitude = place.location.lat;
                     const longitude = place.location.lng;
 
-                    let model = document.createElement('a-entity');
-                    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    model.setAttribute('scale', '0.5 0.5 0.5');
-                    model.setAttribute('rotation', '0 180 0');
-                    model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
-
-                    model.setAttribute('animation-mixer', '');
                     // add place name
-                    /*const placeText = document.createElement('a-link');
+                    const placeText = document.createElement('a-link');
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     placeText.setAttribute('title', place.name);
                     placeText.setAttribute('scale', '15 15 15');
                     
                     placeText.addEventListener('loaded', () => {
                         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-                    });*/
+                    });
 
-                    scene.appendChild(model);
+                    scene.appendChild(placeText);
                 });
             })
     },
