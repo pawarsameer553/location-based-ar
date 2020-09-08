@@ -47,7 +47,7 @@ window.onload = () => {
 
                     let model = document.createElement('a-entity');
                     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    model.setAttribute('scale', '5 5 5');
+                    model.setAttribute('scale', '0.5 0.5 0.5');
                     model.setAttribute('rotation', '50 150 0');
                     model.setAttribute('gltf-model', 'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf');
 
