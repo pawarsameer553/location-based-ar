@@ -47,9 +47,10 @@ window.onload = () => {
 
                     let model = document.createElement('a-entity');
                     model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    model.setAttribute('scale', '100 100 100');
+                    model.setAttribute('scale', '1 1 1');
                     model.setAttribute('rotation', '0 180 0');
                     model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
+                    //model.setAttribute('gltf-model', 'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf');
 
                     model.setAttribute('animation-mixer', '');
                     // add place name
